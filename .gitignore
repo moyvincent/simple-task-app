@@ -9,6 +9,7 @@ venv/
 .venv
 env/
 ENV/
+SPvenv/
 
 # Node
 node_modules/
