@@ -12,7 +12,22 @@ simple-task-app/
 
 ## Setup Instructions
 
-### Backend Setup
+### Option 1: Docker Setup (Recommended)
+
+1. Make sure you have Docker and Docker Compose installed on your system.
+
+2. From the root directory, run:
+```bash
+docker-compose up --build
+```
+
+This will start both the frontend and backend services:
+- Frontend will be available at http://localhost:3000
+- Backend API will be available at http://localhost:8000
+
+### Option 2: Manual Setup
+
+#### Backend Setup
 
 1. Navigate to the backend directory:
 ```bash
@@ -35,7 +50,7 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-### Frontend Setup
+#### Frontend Setup
 
 1. Navigate to the frontend directory:
 ```bash
