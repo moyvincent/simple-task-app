@@ -2,9 +2,10 @@ version: '3.8'
 
 services:
   backend:
-    build: ./backend
+    build: ./backend  
+    image: simple-task-app_backend:latest
     ports:
-      - "8000:8000"
+      - "8000:8080"
     volumes:
       - ./backend:/app
     environment:
@@ -12,8 +13,9 @@ services:
 
   frontend:
     build: ./frontend
+    image: simple-task-app_frontend:latest
     ports:
-      - "3000:3000"
+      - "3000:8080"
     volumes:
       - ./frontend:/app
       - /app/node_modules

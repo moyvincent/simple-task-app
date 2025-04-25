@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
 import uuid
+import os
 
 app = FastAPI()
 
@@ -47,4 +48,11 @@ async def delete_task(task_id: str):
     if task_id not in tasks:
         raise HTTPException(status_code=404, detail="Task not found")
     del tasks[task_id]
-    return {"message": "Task deleted successfully"} 
+    return {"message": "Task deleted successfully"}
+
+# Get port from environment variable or default to 8080
+port = int(os.environ.get("PORT", 8080))
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=port) 
